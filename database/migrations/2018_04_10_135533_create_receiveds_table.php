@@ -15,14 +15,17 @@ class CreateReceivedsTable extends Migration
     {
         Schema::create('receiveds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('key', 45);
+            $table->string('key', 44)->unique();
             $table->integer('number')->unsigned();
-            $table->dateTime('issuedate');
+            $table->integer('serie')->unsigned();
+            $table->string('version', 10);
+            $table->integer('model')->unsigned();
+            $table->dateTime('date');
             $table->string('recipient', 200);
-            $table->decimal('amount', 16, 2);
-            $table->decimal('billed', 16, 2);
-            $table->decimal('weight', 16, 2);
-            $table->integer('status')->unsigned();
+            $table->decimal('amount', 16, 2)->nullable();
+            $table->decimal('billed', 16, 2)->nullable();
+            $table->decimal('weight', 16, 2)->nullable();
+            $table->integer('status')->unsigned()->nullable();
             $table->longText('xmlcontent');
             $table->timestamps();
         });

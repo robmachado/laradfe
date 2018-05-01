@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Recipient extends Model
 {
     
-    public function phone()
+    public function address()
     {
-        return $this->hasOne('App\Models\RecipientAdress');
+        return $this->hasOne('App\Models\RecipientAddress');
     }
     
     public function contacts()

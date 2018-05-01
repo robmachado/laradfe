@@ -25,6 +25,7 @@ class CreateCompaniesTable extends Migration
             $table->longText('certificate');
             $table->string('password', 100);
             $table->datetime('validuntil');
+            $table->longText('chain');
             $table->integer('model')->unsigned();
             $table->integer('serie')->unsigned();
             $table->integer('number')->unsigned();

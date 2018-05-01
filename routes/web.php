@@ -22,3 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/imports', 'ImportsController@index');
+
+Route::resource('/company', 'CompanyController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
